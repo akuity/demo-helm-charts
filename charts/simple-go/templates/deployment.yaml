@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ include "simple-go.fullname" . }}
+    {{- include "simple-go.labels" . | nindent 4 }}
+  name: {{ include "simple-go.fullname" . }}
+  namespace: {{ .Release.Namespace | default "default"}}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "simple-go.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "simple-go.fullname" . }}
+    spec:
+      containers:
+      - image: quay.io/christianh814/simple-go:{{ .Values.imageTag }}
+        name: {{ .Chart.Name }}
+        env:
+          - name: SIMPLE_GO_SERVICE_HOST
+            value: "$({{ .Release.Name | upper }}_SIMPLE_GO_SERVICE_HOST)"
+          - name: SIMPLE_GO_PORT_8080_TCP_PORT
+            value: "$({{ .Release.Name | upper }}_SIMPLE_GO_PORT_8080_TCP_PORT)"
+        volumeMounts:
+        - mountPath: /etc/myapp
+          name: config
+      volumes:
+      - name: config
+        configMap:
+          name: {{ include "simple-go.fullname" . }}
+

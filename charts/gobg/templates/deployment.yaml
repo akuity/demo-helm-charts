@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ include "gobg.fullname" . }}
+    {{- include "gobg.labels" . | nindent 4 }}
+  name: {{ include "gobg.fullname" . }}
+  namespace: {{ .Release.Namespace | default "default"}}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "gobg.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "gobg.fullname" . }}
+    spec:
+      containers:
+      - image: docker.io/christianh814/gobg:{{ .Values.color | lower }}
+        name: {{ .Chart.Name }}

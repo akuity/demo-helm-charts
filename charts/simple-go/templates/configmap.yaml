@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "simple-go.fullname" . }}
+  namespace: {{ .Release.Namespace | default "default"}}
+data:
+  test.conf: |
+{{ .Values.appconfig | indent 4 }}

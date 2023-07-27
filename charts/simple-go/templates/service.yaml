@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: {{ include "simple-go.fullname" . }}
+    {{- include "simple-go.labels" . | nindent 4 }}
+  name: {{ include "simple-go.fullname" . }}
+  namespace: {{ .Release.Namespace | default "default"}}
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: {{ include "simple-go.fullname" . }}

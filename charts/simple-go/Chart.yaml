@@ -1,0 +1,10 @@
+apiVersion: v2
+name: simple-go
+description: Simple Web App written in Go
+type: application
+
+# Chart version
+version: 0.1.0
+
+# App version
+appVersion: "1.0.0"

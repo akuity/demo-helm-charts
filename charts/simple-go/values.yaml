@@ -1,0 +1,9 @@
+## Replicas for the deployment
+replicaCount: 1
+
+## ImageTag to use. You probably don't need to change this
+imageTag: latest
+
+## Set the config to display
+appconfig: |
+  {"spec":{"stage":"dev"}}
