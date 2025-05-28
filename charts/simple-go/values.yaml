@@ -7,3 +7,8 @@ imageTag: latest
 ## Set the config to display
 appconfig: |
   {"spec":{"stage":"dev"}}
+
+## Set NodePort
+#service:
+  #type: NodePort
+  #port: 30280

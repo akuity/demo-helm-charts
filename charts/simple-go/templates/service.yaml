@@ -7,9 +7,15 @@ metadata:
   name: {{ include "simple-go.fullname" . }}
   namespace: {{ .Release.Namespace | default "default"}}
 spec:
+  {{- if eq (.Values.service).type "NodePort" }}
+  type: NodePort
+  {{- end }}
   ports:
   - port: 8080
     protocol: TCP
     targetPort: 8080
+    {{- if eq (.Values.service).type "NodePort" }}
+    nodePort: {{ .Values.service.port | default "32680" }}
+    {{- end }}
   selector:
     app: {{ include "simple-go.fullname" . }}

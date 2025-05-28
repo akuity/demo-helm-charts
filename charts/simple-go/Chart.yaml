@@ -4,7 +4,7 @@ description: Simple Web App written in Go
 type: application
 
 # Chart version
-version: 0.1.0
+version: 0.2.0
 
 # App version
-appVersion: "1.0.0"
+appVersion: "1.1.0"
