@@ -21,9 +21,9 @@ spec:
         name: {{ .Chart.Name }}
         env:
           - name: SIMPLE_GO_SERVICE_HOST
-            value: "$({{ .Release.Name | upper }}_SIMPLE_GO_SERVICE_HOST)"
+            value: "$({{ .Release.Name | replace "-" "_" | upper }}_SIMPLE_GO_SERVICE_HOST)"
           - name: SIMPLE_GO_PORT_8080_TCP_PORT
-            value: "$({{ .Release.Name | upper }}_SIMPLE_GO_PORT_8080_TCP_PORT)"
+            value: "$({{ .Release.Name | replace "-" "_" | upper }}_SIMPLE_GO_PORT_8080_TCP_PORT)"
         volumeMounts:
         - mountPath: /etc/myapp
           name: config

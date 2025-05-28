@@ -3,7 +3,7 @@ entries:
   gobg:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-05-27T19:16:21.019943-07:00"
+    created: "2025-05-27T19:44:23.428854-07:00"
     description: Simple Web App written in Go, that shows a color square.
     digest: fd81770ec09af92a5991671af52eb50be20b494779f6280cc29efa0ada030fc4
     name: gobg
@@ -13,8 +13,18 @@ entries:
     version: 0.1.0
   simple-go:
   - apiVersion: v2
+    appVersion: 1.2.0
+    created: "2025-05-27T19:44:23.429314-07:00"
+    description: Simple Web App written in Go
+    digest: 421021c785f45276590bd883ca3088fc67c15a97299e7e24527dda563f113cae
+    name: simple-go
+    type: application
+    urls:
+    - https://akuity.github.io/demo-helm-charts/public/simple-go-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: 1.1.0
-    created: "2025-05-27T19:16:21.020454-07:00"
+    created: "2025-05-27T19:44:23.429167-07:00"
     description: Simple Web App written in Go
     digest: 30ed62821e1e9167561be823160d1a058828806d2360f4187695effbfbad61c0
     name: simple-go
@@ -24,7 +34,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-05-27T19:16:21.020302-07:00"
+    created: "2025-05-27T19:44:23.429009-07:00"
     description: Simple Web App written in Go
     digest: b86caf3304131cf62f5e62b08ad9da71964be1ea4ad491941020e07de999d0fe
     name: simple-go
@@ -32,4 +42,4 @@ entries:
     urls:
     - https://akuity.github.io/demo-helm-charts/public/simple-go-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-27T19:16:21.018731-07:00"
+generated: "2025-05-27T19:44:23.428577-07:00"
